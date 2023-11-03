@@ -1,7 +1,4 @@
-// Import your own packages or modules
-const inquirer = require("inquirer");
-const fs = require("fs");
-const { CustomShape1, CustomShape2, SVG } = require("./custom");
+import inquirer from "inquirer";
 
 // Define your own questions for user input
 const questions = [
@@ -19,12 +16,17 @@ const questions = [
 ];
 
 // Customize the function for writing to a file
-function writeToFile(fileName, data) {
-  // Customize how the data is written to a file
-  fs.writeFile(fileName, data, function (error, data) {
-    // Customize error handling and success message
-    error ? console.error(error) : console.log("File saved successfully");
-  });
+async function writeToFile(fileName, data) {
+  try {
+    // Customize how the data is written to a file
+    await fs.writeFile(fileName, data);
+    console.log("File saved successfully");
+  } catch (error) {
+    // Customize error handling
+    console.error(error);
+  }
+  // Customize error handling and success message
+  error ? console.error(error) : console.log("File saved successfully");
 }
 
 // Customize the function to create your shapes

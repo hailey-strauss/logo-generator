@@ -1,5 +1,5 @@
-import inquirer from "inquirer";
-
+// import inquirer from "inquirer";
+const inquirer = require("inquirer");
 // Define your own questions for user input
 const questions = [
   {

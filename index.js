@@ -4,15 +4,28 @@ const inquirer = require("inquirer");
 const questions = [
   {
     type: "input",
-    message: "Enter custom input 1:",
-    name: "customInput1",
+    message: "Please enter your text, limit is three characters.",
+    name: "text",
   },
+
   {
     type: "input",
-    message: "Enter custom input 2:",
-    name: "customInput2",
+    message: "Please your text color as a keyword or a hexadecimal number.",
+    name: "colorText",
   },
-  // Add more questions as needed
+
+  {
+    type: "list",
+    message: "Please select from the following shapes:",
+    name: "shape",
+    choices: ["circle", "triangle", "square"],
+  },
+
+  {
+    type: "input",
+    message: "Please your shape's color as a keyword or a hexadecimal number.",
+    name: "colorShape",
+  },
 ];
 
 // Customize the function for writing to a file

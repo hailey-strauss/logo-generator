@@ -42,34 +42,64 @@ async function writeToFile(fileName, data) {
   error ? console.error(error) : console.log("File saved successfully");
 }
 
-// Customize the function to create your shapes
+/class Circle {
+  setCustomProperty1(value) {
+    // implementation here
+  }
+  setCustomProperty2(value) {
+    // implementation here
+  }
+  // add more methods as needed
+}
+
+class Triangle {
+  setCustomProperty1(value) {
+    // implementation here
+  }
+  setCustomProperty2(value) {
+    // implementation here
+  }
+  // add more methods as needed
+}
+
+class Square {
+  setCustomProperty1(value) {
+    // implementation here
+  }
+  setCustomProperty2(value) {
+    // implementation here
+  }
+  // add more methods as needed
+}
+
 function generateLogo() {
   inquirer.prompt(questions).then((answers) => {
     console.log(answers);
     let customShape;
-    // Customize this switch statement to handle your own shape classes
     switch (answers.shape) {
-      case "custom1":
+      case "circle":
         console.log("User selected custom shape 1.");
-        customShape = new CustomShape1();
+        customShape = new Circle();
         break;
-      case "custom2":
+      case "triangle":
         console.log("User selected custom shape 2.");
-        customShape = new CustomShape2();
+        customShape = new Triangle();
         break;
-      // Add cases for your custom shapes
+      case "square":
+        console.log("User selected custom shape 3.");
+        customShape = new Square();
+        break;
     }
-    // Customize how you set properties for your shapes
-    customShape.setCustomProperty1(answers.customInput1);
-    customShape.setCustomProperty2(answers.customInput2);
-
+    customShape.setCustomProperty1(answers.customProperty1);
+    customShape.setCustomProperty2(answers.customProperty2);
+  });
+}
     const svg = new SVG();
     // Customize how the SVG is generated based on your shapes
     svg.setShape(customShape.render());
 
     writeToFile("output.svg", svg.render()); // Customize the output file name
   });
-}
 
 // Call your custom function to generate the logo
 generateLogo();

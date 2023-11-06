@@ -42,7 +42,7 @@ async function writeToFile(fileName, data) {
   error ? console.error(error) : console.log("File saved successfully");
 }
 
-/class Circle {
+class Circle {
   setCustomProperty1(value) {
     // implementation here
   }
@@ -94,12 +94,11 @@ function generateLogo() {
     customShape.setCustomProperty2(answers.customProperty2);
   });
 }
-    const svg = new SVG();
-    // Customize how the SVG is generated based on your shapes
-    svg.setShape(customShape.render());
+const svg = new SVG();
+// Customize how the SVG is generated based on your shapes
+svg.setShape(customShape.render());
 
-    writeToFile("output.svg", svg.render()); // Customize the output file name
-  });
+writeToFile("output.svg", svg.render()); // Customize the output file name
 
 // Call your custom function to generate the logo
 generateLogo();

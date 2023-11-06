@@ -1,5 +1,6 @@
 // import inquirer from "inquirer";
 const inquirer = require("inquirer");
+const { Circle, Triangle, Square, SVG } = require("./lib");
 // Define your own questions for user input
 const questions = [
   {
@@ -49,7 +50,6 @@ class Circle {
   setCustomProperty2(value) {
     // implementation here
   }
-  // add more methods as needed
 }
 
 class Triangle {

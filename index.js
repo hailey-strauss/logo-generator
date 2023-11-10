@@ -43,35 +43,6 @@ async function writeToFile(fileName, data) {
   error ? console.error(error) : console.log("File saved successfully");
 }
 
-class Circle {
-  setCustomProperty1(value) {
-    // implementation here
-  }
-  setCustomProperty2(value) {
-    // implementation here
-  }
-}
-
-class Triangle {
-  setCustomProperty1(value) {
-    // implementation here
-  }
-  setCustomProperty2(value) {
-    // implementation here
-  }
-  // add more methods as needed
-}
-
-class Square {
-  setCustomProperty1(value) {
-    // implementation here
-  }
-  setCustomProperty2(value) {
-    // implementation here
-  }
-  // add more methods as needed
-}
-
 function generateLogo() {
   inquirer.prompt(questions).then((answers) => {
     console.log(answers);

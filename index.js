@@ -1,6 +1,9 @@
 // import inquirer from "inquirer";
 const inquirer = require("inquirer");
-const { Circle, Triangle, Square, SVG } = require("./lib");
+const { Circle } = require("./lib/circle");
+const { Square } = require("./lib/square");
+const { Triangle } = require("./lib/triangle");
+const { Shape, SVG } = require("./lib/shapes");
 // Define your own questions for user input
 const questions = [
   {

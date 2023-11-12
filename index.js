@@ -66,12 +66,13 @@ function generateLogo() {
     }
     customShape.setCustomProperty1(answers.customProperty1);
     customShape.setCustomProperty2(answers.customProperty2);
+    const svg = new SVG();
   });
-const svg = new SVG();
-// Customize how the SVG is generated based on your shapes
-svg.setShape(customShape.render());
 
-writeToFile("output.svg", svg.render()); // Customize the output file name
+  // Customize how the SVG is generated based on your shapes
+  svg.setShape(customShape.render());
 
+  writeToFile("output.svg", svg.render()); // Customize the output file name
+}
 // Call your custom function to generate the logo
-generateLogo()
+generateLogo();

@@ -34,19 +34,16 @@ To utilize the application, the user should first install the Inquirer package v
 The purpose of this application is to create a logos.
 
 Here are a couple of screenshots of what the Readme Generator looks like.
-![screenshot](/img/readme.png)
-![screenshot](/img/readme1.png)
+![screenshot](/assets/img/logo.png)
 
 <a name="Video"></a>
 
 ## Video
 
-https://github.com/hailey-strauss/readmegenerator/assets/126025611/e0c7e354-8db1-40e2-b68f-f0ab23428a88
-
-<a name="Email"></a>
+https://github.com/hailey-strauss/logo-generator/assets/126025611/f4c35b15-43d1-4b0a-99a6-940010216447
 
 ## Github
 
 <a name="Github"></a>
 
-https://github.com/hailey-strauss/readmegenerator
+https://github.com/hailey-strauss/logo-generator

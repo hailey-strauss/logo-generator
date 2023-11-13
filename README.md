@@ -1,4 +1,4 @@
-# Readme Generator
+# Logo Generator
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@
 
 ## Description
 
-The Readme Generator is a tool designed to simplify and streamline the process of creating README files for software projects. These generators are particularly useful for developers and open-source contributors, as they help maintain a consistent structure and format for documentation across different projects. Users can input project-specific information such as project title, description, installation instructions, usage examples, contributing guidelines, and more. By automating the creation of README files, developers save time that would otherwise be spent manually creating and formatting documentation. Overall, README generators contribute to better project organization, documentation, and accessibility for users and potential contributors. They help ensure that project information is presented in a clear, consistent, and professional manner, ultimately improving the project's visibility and usability.
+The Logo Generator is a versatile and user-friendly Node.js application that empowers users to create custom logos with ease. This powerful tool allows individuals and businesses to design logos that represent their brand, vision, and identity in a unique and visually appealing way. Users can choose from a selection of basic geometric shapes, including circles, triangles, and squares, to serve as the foundation for their logo. Each shape can be customized to suit their preferences. The Logo Generator enables users to add text to their logo, with the option to specify the content and color of the text. Users have full control over the color scheme of their logo. They can define the colors for both the chosen shape and the text using keywords or hexadecimal values, allowing for endless creative possibilities. The generated logos are output in Scalable Vector Graphics (SVG) format, ensuring that they can be easily scaled without losing quality. The Logo Generator includes a file-saving feature that allows users to save their custom logo designs to their local machine. This way, users can access and use their logos whenever and wherever they need them.
 
 <a name="License"></a>
 

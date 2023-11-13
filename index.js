@@ -1,9 +1,6 @@
 const fs = require("fs");
 // import inquirer from "inquirer";
 const inquirer = require("inquirer");
-// const { Circle } = require("./lib/circle");
-// const { Square } = require("./lib/square");
-// const { Triangle } = require("./lib/triangle");
 const { Shape, SVG, Circle, Triangle, Square } = require("./lib/shapes");
 // Define your own questions for user input
 const questions = [
@@ -47,28 +44,7 @@ async function writeToFile(fileName, data) {
   error ? console.error(error) : console.log("File saved successfully");
 }
 
-// function generateLogo() {
-//   return inquirer.prompt(questions).then((answers) => {
-//     console.log(answers);
-//     let customShape;
-//     switch (answers.shape) {
-//       case "circle":
-//         console.log("User selected custom shape 1.");
-//         customShape = new Circle();
-//         break;
-//       case "triangle":
-//         console.log("User selected custom shape 2.");
-//         customShape = new Triangle();
-//         break;
-//       case "square":
-//         console.log("User selected custom shape 3.");
-//         customShape = new Square();
-//         break;
-//     }
-//     customShape.setCustomProperty1(answers.customProperty1);
-//     customShape.setCustomProperty2(answers.customProperty2);
-//     const svg = new SVG();
-//   });
+// Create a function to initialize app
 function generateLogo() {
   return inquirer.prompt(questions).then((answers) => {
     console.log(answers);
@@ -98,7 +74,7 @@ function generateLogo() {
     const svgData = svg.render();
 
     // Use fs.writeFile() to save the SVG data to a file
-    fs.writeFile("output.svg", svgData, (err) => {
+    fs.writeFile("logo.svg", svgData, (err) => {
       if (err) {
         console.error("Error saving file:", err);
       } else {

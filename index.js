@@ -46,33 +46,60 @@ async function writeToFile(fileName, data) {
   error ? console.error(error) : console.log("File saved successfully");
 }
 
-function generateLogo() {
-  return inquirer.prompt(questions).then((answers) => {
-    console.log(answers);
-    let customShape;
-    switch (answers.shape) {
-      case "circle":
-        console.log("User selected custom shape 1.");
-        customShape = new Circle();
-        break;
-      case "triangle":
-        console.log("User selected custom shape 2.");
-        customShape = new Triangle();
-        break;
-      case "square":
-        console.log("User selected custom shape 3.");
-        customShape = new Square();
-        break;
-    }
-    customShape.setCustomProperty1(answers.customProperty1);
-    customShape.setCustomProperty2(answers.customProperty2);
-    const svg = new SVG();
-  });
+// function generateLogo() {
+//   return inquirer.prompt(questions).then((answers) => {
+//     console.log(answers);
+//     let customShape;
+//     switch (answers.shape) {
+//       case "circle":
+//         console.log("User selected custom shape 1.");
+//         customShape = new Circle();
+//         break;
+//       case "triangle":
+//         console.log("User selected custom shape 2.");
+//         customShape = new Triangle();
+//         break;
+//       case "square":
+//         console.log("User selected custom shape 3.");
+//         customShape = new Square();
+//         break;
+//     }
+//     customShape.setCustomProperty1(answers.customProperty1);
+//     customShape.setCustomProperty2(answers.customProperty2);
+//     const svg = new SVG();
+//   });
+return inquirer.prompt(questions).then((answers) => {
+  console.log(answers);
+  let customShape;
+  switch (answers.shape) {
+    case "circle":
+      console.log("User selected custom shape 1.");
+      customShape = new Circle();
+      break;
+    case "triangle":
+      console.log("User selected custom shape 2.");
+      customShape = new Triangle();
+      break;
+    case "square":
+      console.log("User selected custom shape 3.");
+      customShape = new Square();
+      break;
+  }
 
-  // Customize how the SVG is generated based on your shapes
-  svg.setShape(customShape.render());
+  customShape.setcolorShape(answers.colorShape);
+  customShape.setcolorText(answers.colorText);
+  customShape.settext(answers.text);
+
+  const svg = new SVG();
+  svg.setshape(customShape.render());
 
   writeToFile("output.svg", svg.render()); // Customize the output file name
-}
+});
+
+//   // Customize how the SVG is generated based on your shapes
+//   svg.setShape(customShape.render());
+
+//   writeToFile("output.svg", svg.render()); // Customize the output file name
+// }
 // Call your custom function to generate the logo
 generateLogo();

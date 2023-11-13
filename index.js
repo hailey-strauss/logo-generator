@@ -47,7 +47,7 @@ async function writeToFile(fileName, data) {
 }
 
 function generateLogo() {
-  inquirer.prompt(questions).then((answers) => {
+  return inquirer.prompt(questions).then((answers) => {
     console.log(answers);
     let customShape;
     switch (answers.shape) {

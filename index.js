@@ -1,3 +1,4 @@
+const fs = require("fs");
 // import inquirer from "inquirer";
 const inquirer = require("inquirer");
 // const { Circle } = require("./lib/circle");
@@ -68,38 +69,43 @@ async function writeToFile(fileName, data) {
 //     customShape.setCustomProperty2(answers.customProperty2);
 //     const svg = new SVG();
 //   });
-return inquirer.prompt(questions).then((answers) => {
-  console.log(answers);
-  let customShape;
-  switch (answers.shape) {
-    case "circle":
-      console.log("User selected custom shape 1.");
-      customShape = new Circle();
-      break;
-    case "triangle":
-      console.log("User selected custom shape 2.");
-      customShape = new Triangle();
-      break;
-    case "square":
-      console.log("User selected custom shape 3.");
-      customShape = new Square();
-      break;
-  }
+function generateLogo() {
+  return inquirer.prompt(questions).then((answers) => {
+    console.log(answers);
+    let customShape;
+    switch (answers.shape) {
+      case "circle":
+        console.log("User selected custom shape 1.");
+        customShape = new Circle();
+        break;
+      case "triangle":
+        console.log("User selected custom shape 2.");
+        customShape = new Triangle();
+        break;
+      case "square":
+        console.log("User selected custom shape 3.");
+        customShape = new Square();
+        break;
+    }
 
-  customShape.setcolorShape(answers.colorShape);
-  customShape.setcolorText(answers.colorText);
-  customShape.settext(answers.text);
+    customShape.setcolorShape(answers.colorShape);
+    customShape.setcolorText(answers.colorText);
+    customShape.settext(answers.text);
 
-  const svg = new SVG();
-  svg.setshape(customShape.render());
+    const svg = new SVG();
+    svg.setshape(customShape.render());
 
-  writeToFile("output.svg", svg.render()); // Customize the output file name
-});
+    const svgData = svg.render();
 
-//   // Customize how the SVG is generated based on your shapes
-//   svg.setShape(customShape.render());
-
-//   writeToFile("output.svg", svg.render()); // Customize the output file name
-// }
+    // Use fs.writeFile() to save the SVG data to a file
+    fs.writeFile("output.svg", svgData, (err) => {
+      if (err) {
+        console.error("Error saving file:", err);
+      } else {
+        console.log("File saved successfully");
+      }
+    });
+  });
+}
 // Call your custom function to generate the logo
 generateLogo();
